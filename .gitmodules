@@ -1,0 +1,3 @@
+[submodule "authen/common"]
+	path = authen/common
+	url = git@github.com:duclinhfetel/common.git
