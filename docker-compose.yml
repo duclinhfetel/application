@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  gateway:
+    image: linhnd66/metadoc:gateway
+    container_name: gateway
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - auth
+    
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+  
+  auth:
+    image: linhnd66/metadoc:auth
+    container_name: auth
+    build:
+      context: ./authen
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8081:8081"
+    command: python main.py
+    # command: sh -c  "uwsgi --ini uwsgi.ini"
+    
