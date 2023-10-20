@@ -1,0 +1,6 @@
+[submodule "authen/common"]
+	path = authen/common
+	url = git@github.com:duclinhfetel/common.git
+[submodule "careplan/common"]
+	path = careplan/common
+	url = git@github.com:duclinhfetel/common.git
