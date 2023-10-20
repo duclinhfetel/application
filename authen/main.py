@@ -28,7 +28,7 @@ def authorization():
 
 @app.route("/api/v2/info", methods=['GET'])
 def info():
-    print("call info api")
+    # print("call info api")
     return {"state":"info api"}, 200
 
 
